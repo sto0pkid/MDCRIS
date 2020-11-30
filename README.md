@@ -29,14 +29,16 @@ Make sure to run with a user `<USER>` that has appropriate permissions.
 
 If successful, you should see output like:
 
-   CREATE DATABASE
-   You are now connected to database "mdcris" as user "<USER>".
-   CREATE TABLE 
-   COPY 2982919 
-   COPY 2566092 
-   ALTER TABLE 
-   CREATE TABLE
-   COPY 13379
-   ALTER TABLE
+```
+CREATE DATABASE
+You are now connected to database "mdcris" as user "<USER>".
+CREATE TABLE 
+COPY 2982919 
+COPY 2566092 
+ALTER TABLE 
+CREATE TABLE
+COPY 13379
+ALTER TABLE
+```
 
 The dataset should now be available in database `mdcris`.
