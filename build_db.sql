@@ -1,8 +1,8 @@
 \cd :scriptdir;
 
-CREATE DATABASE mdcris_test;
+CREATE DATABASE mdcris;
 
-\c mdcris_test;
+\c mdcris;
 
 
 /*
@@ -38,8 +38,10 @@ CREATE TABLE contributions(
 
 -- `QUOTE E'\b'` sets the quote character to backspace so that
 -- double quotes in input are preserved
-\copy contributions(receiving,filing_period,contribution_date,contributor_name,contributor_address,contributor_type,contribution_type,contribution_amount,employer_name,employer_occupation,office,fund_type,blank) FROM 'ContributionsList.csv'DELIMITER ',' QUOTE E'\b' CSV HEADER;
+\copy contributions(receiving,filing_period,contribution_date,contributor_name,contributor_address,contributor_type,contribution_type,contribution_amount,employer_name,employer_occupation,office,fund_type,blank) FROM 'ContributionsList1.csv'DELIMITER ',' QUOTE E'\b' CSV HEADER;
 
+
+\copy contributions(receiving,filing_period,contribution_date,contributor_name,contributor_address,contributor_type,contribution_type,contribution_amount,employer_name,employer_occupation,office,fund_type,blank) FROM 'ContributionsList2.csv'DELIMITER ',' QUOTE E'\b' CSV HEADER;
 
 ALTER TABLE contributions DROP COLUMN blank;
 
