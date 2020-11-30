@@ -14,10 +14,29 @@ Contributions info can be acquired from: https://campaignfinance.maryland.gov/Pu
 * To get the first half choose 01/01/1975 - 12/31/2014 in the Financial Information section. Export it to CSV, naming it `ContributionsList1.csv`
 * To get the second half choose 01/01/2015 as the Start Date in the Financial Information section and leave the End Date blank. Export it to CSV, naming it `ContributionsList2.csv`
 
-You should now have 3 CSV files: `CommitteesInfo.csv`, `ContributionsList1.csv` and `ContributionsList2.csv`, to be stored in a directory `<DIR>`.
+You should now have 3 CSV files:
+* `CommitteesInfo.csv`
+* `ContributionsList1.csv`
+* `ContributionsList2.csv`
+
+These should all be placed into some directory `<DIR>`.
 
 ## Create and fill the database:
 
 `psql -vscriptdir="<DIR>" -f "build_db.sql"`
 
-Make sure to run with a user that has appropriate permissions in the database.
+Make sure to run with a user `<USER>` that has appropriate permissions.
+
+If successful, you should see output like:
+
+   CREATE DATABASE
+   You are now connected to database "mdcris" as user "<USER>".
+   CREATE TABLE 
+   COPY 2982919 
+   COPY 2566092 
+   ALTER TABLE 
+   CREATE TABLE
+   COPY 13379
+   ALTER TABLE
+
+The dataset should now be available in database `mdcris`.
